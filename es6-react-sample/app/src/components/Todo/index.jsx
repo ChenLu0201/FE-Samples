@@ -1,4 +1,8 @@
 import React from "react";
+import classNames from "classnames/bind";
+import scss from './Todo.scss';
+
+const cx = classNames.bind(scss);
 
 class Todo extends React.Component {
   constructor (props) {
@@ -7,7 +11,7 @@ class Todo extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className={ cx('todo-app') }>
         <h1>Todo List</h1>
         <ul>
           <li>item1</li>
