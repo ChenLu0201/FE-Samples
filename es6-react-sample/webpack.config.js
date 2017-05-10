@@ -28,20 +28,6 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ["babel-loader"]
       },
-      // {
-      //   test: /\.(css)$/,
-      //   exclude: /node_modules/,
-      //   loaders: combineLoaders([
-      //     {loader: 'style-loader'},
-      //     {
-      //       loader: 'css-loader',
-      //       query: {
-      //         modules: true,
-      //         localIdentName: '[name]__[local]___[hash:base64:5]'
-      //       }
-      //     }
-      //   ])
-      // }
       {
         test: /\.scss$/,
         loader: extractCSS.extract(['css-loader?minimize&modules&importLoaders=2&localIdentName=[name]__[local]', 'sass-loader']),
