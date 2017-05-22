@@ -12,14 +12,14 @@ class Todo extends React.Component {
 
   deleteTask(taskId) {
     let originTasks = this.state.tasks;
-    this.setState({tasks: originTasks.filter((task) => { return task !== taskId})}, () => {console.log('hello')});
+    this.setState({tasks: originTasks.filter((task) => { return task !== taskId})});
   }
 
   addTask() {
     let newTasks = this.state.tasks;
     let index = this.state.nextIndex;
     newTasks.push(index + 1);
-    this.setState({nextIndex:index + 1, tasks: newTasks}, null);
+    this.setState({nextIndex:index + 1, tasks: newTasks});
   }
 
   render () {
@@ -30,7 +30,7 @@ class Todo extends React.Component {
         <ul>
           {
             this.state.tasks.map((task) => {
-              return <li key={task}>item{task}<button onClick={() => this.deleteTask(task)}>delete</button></li>
+              return <li>item{task}<button onClick={() => this.deleteTask(task)}>delete</button></li>
             })
           }
         </ul>
