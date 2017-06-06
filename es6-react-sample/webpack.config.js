@@ -1,8 +1,6 @@
 const path = require('path');
-// const combineLoaders = require('webpack-combine-loaders');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 
 const extractCSS = new ExtractTextPlugin('styles.css');
 
