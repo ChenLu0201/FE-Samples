@@ -1,18 +1,49 @@
-import React, {Component, PropTypes} from "react";
+import React from "react";
+import PropTypes from "prop-types"
 import classNames from "classnames/bind";
 import scss from './Todo.scss';
 
 const cx = classNames.bind(scss);
 
-class Todo extends Component {
+class Todo extends React.Component {
   static propTypes = {
-    index12: PropTypes.number
+    index: PropTypes.number
   };
 
   constructor (props) {
     super(props);
     this.state = {nextIndex:0, tasks: []};
+    console.log('constructor()');
   };
+
+  getInitialState() {
+    console.log('getInitialState');
+  }
+
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps');
+  }
+
+  shouldComponentUpdate() {
+    console.log('shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log('componentWillUpdate');
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
 
   deleteTask(taskId) {
     let originTasks = this.state.tasks;
@@ -27,6 +58,7 @@ class Todo extends Component {
   };
 
   render () {
+    console.log('render');
     return (
       <div className={ cx('todo-app') }>
         <h1>Todo List</h1>
