@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redux basic example</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+</head>
+<body>
+<div id='count'>
+</div>
+<button id='increment'>+</button>
+<button id='decrement'>-</button>
+<button id='rollback'>rollback</button>
+</body>
+<script type="text/javascript">
+    var initState = {currentCount: 0, previousCount: 0};
+    function counter(state = initState, action) {
+        console.log('state', state);
+        console.log('action', action);
+        switch (action.type) {
+            case 'INCREMENT':
+                state.previousCount = state.currentCount;
+                state.currentCount += 1;
+                break;
+            case 'DECREMENT':
+                state.previousCount = state.currentCount;
+                state.currentCount -= 1;
+              break;
+            case 'ROLLBACK':
+                state.currentCount = state.previousCount;
+                break;
+        }
+        return state;
+
+    }
+
+    var store = Redux.createStore(counter);
+    var valueEl = document.getElementById('count');
+    function render() {
+        valueEl.innerHTML = store.getState().currentCount.toString();
+    }
+    render();
+    store.subscribe(render);
+
+    document.getElementById('increment')
+            .addEventListener('click', function () {
+                store.dispatch({ type: 'INCREMENT' })
+            })
+    document.getElementById('decrement')
+            .addEventListener('click', function () {
+                store.dispatch({ type: 'DECREMENT' })
+            })
+    document.getElementById('rollback')
+            .addEventListener('click', function () {
+                store.dispatch({ type: 'ROLLBACK' })
+            })
+
+</script>
+</html>
