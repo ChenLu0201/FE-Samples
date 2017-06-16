@@ -11,12 +11,15 @@ const initState = {};
 describe('<FilterLink />', () => {
 	it('renders with default props', () => {
 		const store = mockStore(initState);
+		const dispatch = jest.fn();
+		store.dispatch = dispatch;
 		const wrapper = mount(
 			<Provider store={store}>
 				<Footer />
 			</Provider>
 		);
 		wrapper.find('a').at(1).simulate('click');
-		console.log(wrapper.find('a').length);
+		expect(dispatch.mock.calls.length).toEqual(1);
+		expect(dispatch.mock.calls[0]).toEqual([{"filter": "SHOW_ACTIVE", "type": "SET_VISIBILITY_FILTER"}]);
 	});
 });
