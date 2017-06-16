@@ -10,7 +10,7 @@ class Link extends Component {
 
 	render() {
 		return (
-			<div>
+			<span>
 				{(this.props.active) && (<span>{ this.props.children }</span>)}
 				{
 					(!this.props.active) && (
@@ -24,7 +24,7 @@ class Link extends Component {
 						</a>
 					)
 				}
-			</div>
+			</span>
 		)
 	}
 }
