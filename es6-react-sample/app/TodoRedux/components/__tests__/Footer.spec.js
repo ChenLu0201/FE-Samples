@@ -6,11 +6,10 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 const mockStore = configureMockStore([thunk]);
-const initState = {};
 
 describe('<FilterLink />', () => {
 	it('renders with default props', () => {
-		const store = mockStore(initState);
+		const store = mockStore({});
 		const dispatch = jest.fn();
 		store.dispatch = dispatch;
 		const wrapper = mount(
