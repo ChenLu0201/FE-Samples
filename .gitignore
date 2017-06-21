@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 **/node_modules/
+dist
 **/dist/.DS_Store
 **/coverage/
 **/npm-debug.log

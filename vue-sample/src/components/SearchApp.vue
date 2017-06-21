@@ -9,7 +9,6 @@
 <script>
   import SearchBar from './SearchBar.vue'
   import PlayerList from './PlayerList.vue'
-  import _ from 'lodash'
   const allPlayers = [
     {name: 'Stephen Curry', age: 27},
     {name: 'Kevin Durant', age: 29},
