@@ -11,8 +11,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 })
 
 module.exports = {
-  // entry: ['./app/main.js'],
-	entry: ['./app/main-redux.js'],
+  entry: ['./app/main.js'],
+	// entry: ['./app/main-redux.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'todo.js'

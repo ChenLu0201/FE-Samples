@@ -7,9 +7,9 @@ import ReduxTodo from './TodoRedux/components/ReduxTodo'
 
 let store = createStore(todoApp)
 
-render(
-    <Provider store={store}>
-        <ReduxTodo />
-    </Provider>,
-	document.getElementById('todo')
-)
+// render(
+//     <Provider store={store}>
+//         <ReduxTodo />
+//     </Provider>,
+// 	document.getElementById('todo')
+// )

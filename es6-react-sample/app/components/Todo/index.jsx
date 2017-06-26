@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 import scss from './Todo.scss';
 
 const cx = classNames.bind(scss);
@@ -69,8 +70,8 @@ class Todo extends React.Component {
 				<ul>
 					{
 						this.state.tasks.map((task) => {
-							return <li>item{task}
-								<button onClick={() => this.deleteTask(task)}>delete</button>
+							return <li key={task}>item{task}
+								<button onClick={() => this.deleteTask(task) }>delete</button>
 							</li>
 						})
 					}

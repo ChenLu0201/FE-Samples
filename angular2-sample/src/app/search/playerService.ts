@@ -10,7 +10,7 @@ const PLAYERS: Player[] = [
   { id: 16, name: 'David West', num: 3, age: 36 },
   { id: 17, name: 'Zaza Pachulia', num: 27, age: 33 },
   { id: 18, name: 'Shaun Livingston', num: 34, age: 34 },
-  { id: 19, name: 'David West', num: 3, age: 36 },
+  { id: 19, name: 'Ian Clark', num: 21, age: 26 },
   { id: 20, name: 'Anderson Varejao', num: 18, age: 34 },
   { id: 20, name: 'Javale McGee', num: 1, age: 29 },
 ];
